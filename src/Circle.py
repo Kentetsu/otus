@@ -1,4 +1,4 @@
-from Figure import Figure
+from src.Figure import Figure
 from math import pi
 
 
@@ -6,6 +6,8 @@ class Circle(Figure):
     name = "Circle"
 
     def __init__(self, radius):
+        if not (type(radius) == int or type(radius) == float):
+            raise ValueError
         self.radius = radius
 
     @property
@@ -15,3 +17,4 @@ class Circle(Figure):
     @property
     def area(self):
         return pi * (self.radius ** 2)
+

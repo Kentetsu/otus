@@ -1,10 +1,12 @@
-from Figure import Figure
+from src.Figure import Figure
 
 
 class Square(Figure):
     name = "Square"
 
     def __init__(self, side):
+        if not (type(side) == int or type(side) == float):
+            raise ValueError
         self.side = side
 
     @property
@@ -14,3 +16,4 @@ class Square(Figure):
     @property
     def area(self):
         return self.side ** 2
+
